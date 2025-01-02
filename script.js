@@ -116,22 +116,27 @@ renderer.setAnimationLoop(() => {
 
 
 var i = 0;
-var txt1 = "Cậu iu🍭 <Tớ mang cả vũ trụ về cho cậu đây >";
+var txt1 = "Cậu iu🍭 <Tớ mang cả vũ trụ về cho cậu đây>";
 var speed = 50;
 typeWriter();
+
 function typeWriter() {
   if (i < txt1.length) {        
-     if(txt1.charAt(i)=='<')
-      document.getElementById("text1").innerHTML += '</br>'
-    else if(txt1.charAt(i)=='>')
-      document.getElementById("text1").innerHTML = ''
-    else if(txt1.charAt(i)=='|')
-      {
-        $(".bg_heart").css("");
-
-      }
-    else
-      document.getElementById("text1").innerHTML += txt1.charAt(i);
+     if(txt1.charAt(i) == '<') {
+        document.getElementById("text1").innerHTML += '</br>';
+     }
+     else if(txt1.charAt(i) == '>') {
+        // Làm mờ dần cả chữ và nền trước khi ẩn nó
+        var element = document.getElementById("text1");
+        element.style.opacity = '0';  // Làm cho phần tử mờ dần
+        element.style.visibility = 'hidden';  // Ẩn phần tử khi mờ dần xong
+     }
+     else if(txt1.charAt(i) == '|') {
+        $(".bg_heart").css("");  // Nếu có thay đổi CSS
+     }
+     else {
+        document.getElementById("text1").innerHTML += txt1.charAt(i);
+     }
     i++;
     setTimeout(typeWriter, speed);
   }
