@@ -4,8 +4,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Chiều cao đầy đủ của cửa sổ trình duyệt */
-  background-color: #000; /* Màu nền để làm nổi bật chữ */
+  height: 100vh;
+  background-color: #000;
 }
 
 .container {
@@ -13,12 +13,17 @@ body {
   text-align: center;
   color: white;
   font-family: cursive;
-  font-size: 30px; /* Kích thước chữ lớn giống thông báo */
+  font-size: 30px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Màu nền nhẹ giúp làm nổi bật chữ */
-  border-radius: 10px; /* Làm tròn góc của khung */
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7); /* Thêm bóng cho phần tử */
-  width: 50%; /* Chiều rộng của phần tử */
-  max-width: 600px; /* Giới hạn chiều rộng tối đa */
-  z-index: 9999; /* Đảm bảo phần tử nằm trên các phần tử khác */
+  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+  width: 50%;
+  max-width: 600px;
+  z-index: 9999;
+
+  /* Cài đặt hiệu ứng mờ dần */
+  transition: opacity 1s ease, visibility 1s ease;
+  opacity: 1; /* Ban đầu độ mờ là 1 (hoàn toàn hiển thị) */
+  visibility: visible; /* Ban đầu phần tử có thể nhìn thấy */
 }
